@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, StatusBar, SafeAreaView, ScrollView,TextInput } from 'react-native';
 import React from 'react';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+
 const Inputs = ({label, iconName, password, error, onFocus = () =>{}, ...props}) => {
     const [hidePassword, setHidePassword] = React.useState(password);
     const [isFocused, setIsFocused] = React.useState(false);
@@ -27,26 +28,24 @@ const Inputs = ({label, iconName, password, error, onFocus = () =>{}, ...props})
                     style={styles.input} 
                     {...props}
                 />
-            {
-                password && (
-                    <Icon 
-                    onPress={
-                        ()=>{setHidePassword(!hidePassword)}
-                    }
-                    name={hidePassword ? 'eye-outline' : 'eye-off-outline'}
-                    style={styles.iconPass} />
-                )
-            }
-            
-            
-            </View>
-            {
-                error && (
-                    <Text style={styles.labelError}>
-                        {error}
-                    </Text>
-                )
-            }
+                {
+                    password && (
+                        <Icon 
+                        onPress={
+                            ()=>{setHidePassword(!hidePassword)}
+                        }
+                        name={hidePassword ? 'eye-outline' : 'eye-off-outline'}
+                        style={styles.iconPass} />
+                    )
+                }
+                </View>
+                {
+                    error && (
+                        <Text style={styles.labelError}>
+                            {error}
+                        </Text>
+                    )
+                }
         </View>
        
     );
@@ -74,6 +73,7 @@ const styles = StyleSheet.create({
         fontSize: 25,
         marginTop: 15,
         color: "#1D94E2",
+        marginLeft: -30,
         
     },
     label: {
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
         color: "#babbc3",
     },
     input: {
-        flex: 1,
+        width: 300,
         
     },
     labelError: {
