@@ -79,11 +79,11 @@ const [errors, setErrors] = React.useState({})
           } error={errors.password}/>
           <Inputs label={"Confirm Password"} iconName="lock" placeholder="Confirm Password" password onChangeText={
             (text) =>{
-              handleOnChange(text, "password");
+              handleOnChange(text, "confirmpassword");
             }
           }
           onFocus={
-            () => handleError(null, "password")
+            () => handleError(null, "confirmpassword")
           } error={errors.confirmpassword}/>
 
           <Button bgColor={orange} txtcolor={white} title="Register" onPress={validate}/>
