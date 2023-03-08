@@ -34,12 +34,13 @@ const styles = StyleSheet.create({
     alignSelf: 'center'
   },
   inputsContainer: {
-    paddingTop: 50,
+    paddingTop: 100,
     paddingHorizontal: 20,
     backgroundColor: "#ffffff",
     height: 710,
     width: 400,
     borderTopLeftRadius: 150,
+    borderBottomEndRadius: 150,
   },
 })
 
