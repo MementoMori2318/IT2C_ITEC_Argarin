@@ -48,7 +48,7 @@ const [errors, setErrors] = React.useState({})
   }
   return (
       <Background>
-        <Text style={styles.gameText}>Game HUB</Text>
+        <Text style={styles.gameText}>GAME HUB</Text>
         <View style={styles.inputsContainer}>
         <Text style={styles.registerText}>Register</Text>
           <Inputs label={"Email"} iconName="email-outline" placeholder="Enter Email" onChangeText={
@@ -101,7 +101,6 @@ const styles = StyleSheet.create({
     height: 710,
     width: 400,
     borderTopLeftRadius: 150,
-    
   },
   gameText: {
     fontSize: 55, 

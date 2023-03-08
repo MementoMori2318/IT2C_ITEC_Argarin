@@ -9,7 +9,7 @@ const Home = (props) => {
   return (
     <Background >
       <View style={styles.container}>
-        <Text style={styles.gameText}>Game HUB</Text>
+        <Text style={styles.gameText}>GAME HUB</Text>
         <Button bgColor={orange} txtcolor={white} title="Login" onPress={() => props.navigation.navigate("Login")}/>
         <Button bgColor={white} txtcolor={orange} title="Register" onPress={() => props.navigation.navigate("Register")} />
         
