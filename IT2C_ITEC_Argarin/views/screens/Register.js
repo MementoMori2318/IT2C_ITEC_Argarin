@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, StatusBar, ScrollView, SafeAreaView } from 'rea
 import Inputs from '../../components/Inputs';
 import Background from '../../components/Background';
 import Button from '../../components/Button';
-import { orange } from '../../components/Color';
+import { orange, white } from '../../components/Color';
 
 const Register = () => {
   const [inputs, setInputs] = React.useState({
@@ -48,8 +48,9 @@ const [errors, setErrors] = React.useState({})
   }
   return (
       <Background>
-        <Text style={styles.registerText}>Register Now!</Text>
-        <ScrollView contentContainerStyle={styles.inputsContainer}>
+        <Text style={styles.gameText}>Game HUB</Text>
+        <View style={styles.inputsContainer}>
+        <Text style={styles.registerText}>Register</Text>
           <Inputs label={"Email"} iconName="email-outline" placeholder="Enter Email" onChangeText={
             (text) =>{
               handleOnChange(text, "email");
@@ -85,8 +86,8 @@ const [errors, setErrors] = React.useState({})
             () => handleError(null, "password")
           } error={errors.confirmpassword}/>
 
-          <Button bgColor={orange} title="Register" onPress={validate}/>
-      </ScrollView>
+          <Button bgColor={orange} txtcolor={white} title="Register" onPress={validate}/>
+      </View>
      </Background>
     
   );
@@ -94,17 +95,23 @@ const [errors, setErrors] = React.useState({})
 
 const styles = StyleSheet.create({
   inputsContainer: {
-    paddingTop: 90,
+    paddingTop: 50,
     paddingHorizontal: 20,
     backgroundColor: "#ffffff",
     height: 710,
     width: 400,
     borderTopLeftRadius: 150,
-    borderBottomEndRadius: 150,
+    
   },
-  registerText:{
+  gameText: {
     fontSize: 55, 
     color: "#fff", 
+    fontWeight: "600", 
+    alignSelf: 'center'
+  },
+  registerText:{
+    fontSize: 30, 
+    color: "#ff2626", 
     fontWeight: "600", 
     alignSelf: 'center'
   }

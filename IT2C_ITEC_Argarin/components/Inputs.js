@@ -66,13 +66,13 @@ const styles = StyleSheet.create({
     icon: {
         fontSize: 25,
         marginTop: 15,
-        color: "#1D94E2",
+        color: "#cc0606",
         marginRight: 10,
     },
     iconPass: {
         fontSize: 25,
         marginTop: 15,
-        color: "#1D94E2",
+        color: "#cc0606",
         marginLeft: -30,
         
     },

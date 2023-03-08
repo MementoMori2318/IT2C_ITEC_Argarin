@@ -6,8 +6,7 @@ const Background = ({children}) => {
   return (
     <View>
       <ImageBackground source={require("../assets/game1.jpg")} style={{height : "100%",}}/>
-      <View style={{position: 'absolute',
-        alignSelf: "center", paddingTop: StatusBar.currentHeight,}}>
+      <View style={{position: 'absolute',alignSelf: "center", paddingTop: StatusBar.currentHeight,}}>
         {children}
       </View>
     </View>

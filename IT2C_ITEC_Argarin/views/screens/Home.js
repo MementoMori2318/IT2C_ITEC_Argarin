@@ -1,28 +1,33 @@
 import * as React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, } from 'react-native';
 import Background from '../../components/Background';
 import Button from '../../components/Button';
-import { darkorange, orange } from '../../components/Color';
+import { darkorange, orange, white } from '../../components/Color';
 
 
 const Home = (props) => {
   return (
-    <Background>
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <Background >
+      <View style={styles.container}>
         <Text style={styles.gameText}>Game HUB</Text>
-        <Button bgColor={darkorange} title="Login" onPress={() => props.navigation.navigate("Login")}/>
-        <Button bgColor={orange} title="Register" onPress={() => props.navigation.navigate("Register")} />
+        <Button bgColor={orange} txtcolor={white} title="Login" onPress={() => props.navigation.navigate("Login")}/>
+        <Button bgColor={white} txtcolor={orange} title="Register" onPress={() => props.navigation.navigate("Register")} />
         
       </View>
     </Background>
   );
 }
 const styles = StyleSheet.create({
+  container: {
+   
+    paddingTop: 200 
+  },
   gameText: {
     fontSize: 55, 
     color: "#fff", 
     fontWeight: "600", 
-    alignSelf: 'center'
+    
+    
   },
  });
 export default Home;
