@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, StatusBar, ScrollView, SafeAreaView } from 'rea
 import Inputs from '../../components/Inputs';
 import Background from '../../components/Background';
 import Button from '../../components/Button';
+import { orange } from '../../components/Color';
 
 const Register = () => {
   const [inputs, setInputs] = React.useState({
@@ -84,7 +85,7 @@ const [errors, setErrors] = React.useState({})
             () => handleError(null, "password")
           } error={errors.confirmpassword}/>
 
-          <Button title="Register" onPress={validate}/>
+          <Button bgColor={orange} title="Register" onPress={validate}/>
       </ScrollView>
      </Background>
     
@@ -93,8 +94,13 @@ const [errors, setErrors] = React.useState({})
 
 const styles = StyleSheet.create({
   inputsContainer: {
-    paddingTop: 10,
-    paddingHorizontal: 15,
+    paddingTop: 90,
+    paddingHorizontal: 20,
+    backgroundColor: "#ffffff",
+    height: 710,
+    width: 400,
+    borderTopLeftRadius: 150,
+    borderBottomEndRadius: 150,
   },
   registerText:{
     fontSize: 55, 
