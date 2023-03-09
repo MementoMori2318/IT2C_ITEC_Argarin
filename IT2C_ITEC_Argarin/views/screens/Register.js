@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, Text, StyleSheet, StatusBar, ScrollView, SafeAreaView } from 'react-native';
+import { View, Text, StyleSheet} from 'react-native';
 import Inputs from '../../components/Inputs';
 import Background from '../../components/Background';
 import Button from '../../components/Button';
@@ -12,15 +12,11 @@ const Register = () => {
     password:"",
     confirmPassword:"",
   })
-  const handleError =(text, input) =>{
-    setErrors(
-      (prevState) =>({...prevState, [input] : text})
-    );
+  const handleError =(text, input) =>{setErrors(
+    (prevState) =>({...prevState, [input] : text}));
   }
   const handleOnChange =(text, input) =>{
-    setInputs(
-      (prevState) =>({...prevState, [input] : text})
-    );
+    setInputs((prevState) =>({...prevState, [input] : text}));
   }
 const [errors, setErrors] = React.useState({})
   const validate =() =>{
