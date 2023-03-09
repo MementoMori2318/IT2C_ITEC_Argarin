@@ -59,40 +59,25 @@ const [errors, setErrors] = React.useState({})
         <Text style={styles.gameText}>GAME HUB</Text>
         <View style={styles.inputsContainer}>
         <Text style={styles.registerText}>Register</Text>
-          <Inputs label={"Email"} iconName="email-outline" placeholder="Enter Email" onChangeText={
-            (text) =>{
-              handleOnChange(text, "email");
-            }
-          }
-          onFocus={
-            () => handleError(null, "email")
-          }
+          <Inputs label={"Email"} iconName="email-outline" placeholder="Enter Email"
+          onChangeText={(text) =>{handleOnChange(text, "email"); }}
+          onFocus={() => handleError(null, "email")}
           error={errors.email}/>
-          <Inputs label={"User Name"} iconName="account-outline" placeholder="Enter User Name" onChangeText={
-            (text) =>{
-              handleOnChange(text,"username");
-            }
-          }
-          onFocus={
-            () => handleError(null, "username")
-          }
+
+          <Inputs label={"User Name"} iconName="account-outline" placeholder="Enter User Name" 
+          onChangeText={(text) =>{handleOnChange(text,"username");}}
+          onFocus={() => handleError(null, "username")}
           error={errors.username}/>
-          <Inputs label={"Password"} iconName="lock-outline" placeholder="Enter Password" password onChangeText={
-            (text) =>{
-              handleOnChange(text, "password");
-            }
-          }
-          onFocus={
-            () => handleError(null, "password")
-          } error={errors.password}/>
-          <Inputs label={"Confirm Password"} iconName="lock" placeholder="Confirm Password" password onChangeText={
-            (text) =>{
-              handleOnChange(text, "confirmPassword");
-            }
-          }
-          onFocus={
-            () => handleError(null, "confirmPassword")
-          } error={errors.confirmPassword}/>
+
+          <Inputs label={"Password"} iconName="lock-outline" placeholder="Enter Password" password 
+          onChangeText={(text) =>{handleOnChange(text, "password");}}
+          onFocus={() => handleError(null, "password")} 
+          error={errors.password}/>
+
+          <Inputs label={"Confirm Password"} iconName="lock" placeholder="Confirm Password" password 
+          onChangeText={(text) =>{handleOnChange(text, "confirmPassword");}}
+          onFocus={() => handleError(null, "confirmPassword")} 
+          error={errors.confirmPassword}/>
 
           <Button bgColor={orange} txtcolor={white} title="Register" onPress={validate}/>
       </View>
