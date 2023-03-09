@@ -10,7 +10,7 @@ const Register = () => {
     email:"",
     username:"",
     password:"",
-    confirmpassword:"",
+    confirmPassword:"",
   })
   const handleError =(text, input) =>{
     setErrors(
@@ -26,24 +26,32 @@ const [errors, setErrors] = React.useState({})
   const validate =() =>{
     console.log("Validate! = " + inputs);
     console.log(inputs);
+    var valid = true;
     
     if (!inputs.email) {
       handleError("Please Input Email", "email")
+      valid = false;
     }else if(!inputs.email.match(/\S+@\S+.\S+/)){
       handleError("Please Input Valid Email", "email")
+      valid = false;
     }
     if(!inputs.username){
       handleError("Please Input UserName", "username")
+      valid = false;
     }
     if(!inputs.password){
       handleError("Please Input password", "password")
-    }else if (!inputs.password.length < 8) {
-      handleError("Minimun password length is 8", "password")
+      valid = false;
+    }else if (inputs.password.length < 6) {
+      handleError("Password is weak", "password")
+      valid = false;
     }
-    if(!inputs.confirmpassword){
-      handleError("Please confirm password", "confirmpassword")
-    }else if (!inputs.confirmpassword === password) {
-      handleError("Password does not match!", "confirmpassword")
+    if(!inputs.confirmPassword){
+      handleError("Please confirm password", "confirmPassword")
+      valid = false;
+    }else if (inputs.confirmPassword != inputs.password) {
+      handleError("Password does not match!", "confirmPassword")
+      valid = false;
     }
   }
   return (
@@ -79,12 +87,12 @@ const [errors, setErrors] = React.useState({})
           } error={errors.password}/>
           <Inputs label={"Confirm Password"} iconName="lock" placeholder="Confirm Password" password onChangeText={
             (text) =>{
-              handleOnChange(text, "confirmpassword");
+              handleOnChange(text, "confirmPassword");
             }
           }
           onFocus={
-            () => handleError(null, "confirmpassword")
-          } error={errors.confirmpassword}/>
+            () => handleError(null, "confirmPassword")
+          } error={errors.confirmPassword}/>
 
           <Button bgColor={orange} txtcolor={white} title="Register" onPress={validate}/>
       </View>
