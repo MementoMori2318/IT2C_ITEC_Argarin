@@ -4,6 +4,7 @@ import Inputs from '../../components/Inputs';
 import Background from '../../components/Background';
 import Button from '../../components/Button';
 import { orange, white } from '../../components/Color';
+import InputsLoader from '../../components/InputsLoader';
 
 const Register = () => {
   const [inputs, setInputs] = React.useState({
@@ -12,46 +13,51 @@ const Register = () => {
     password:"",
     confirmPassword:"",
   })
-  const handleError =(text, input) =>{setErrors(
+const handleError =(text, input) =>{setErrors(
     (prevState) =>({...prevState, [input] : text}));
   }
-  const handleOnChange =(text, input) =>{
+const handleOnChange =(text, input) =>{
     setInputs((prevState) =>({...prevState, [input] : text}));
   }
 const [errors, setErrors] = React.useState({})
-  const validate =() =>{
-    console.log("Validate! = " + inputs);
-    console.log(inputs);
+  
+const validate =() =>{
     var valid = true;
-    
+
     if (!inputs.email) {
       handleError("Please Input Email", "email")
       valid = false;
-    }else if(!inputs.email.match(/\S+@\S+.\S+/)){
+    }else if(!inputs.email.match(/\S+@\S+.\S+/)) {
       handleError("Please Input Valid Email", "email")
-      valid = false;
-    }
-    if(!inputs.username){
+      valid = false;}
+    if(!inputs.username) {
       handleError("Please Input UserName", "username")
-      valid = false;
-    }
-    if(!inputs.password){
+      valid = false;}
+    if(!inputs.password) {
       handleError("Please Input password", "password")
       valid = false;
     }else if (inputs.password.length < 6) {
-      handleError("Password is weak", "password")
-      valid = false;
-    }
-    if(!inputs.confirmPassword){
+      handleError("Password is to short", "password")
+      valid = false;}
+    if(!inputs.confirmPassword) {
       handleError("Please confirm password", "confirmPassword")
       valid = false;
     }else if (inputs.confirmPassword != inputs.password) {
       handleError("Password does not match!", "confirmPassword")
-      valid = false;
-    }
+      valid = false;}
+
+    if (valid == true) {
+      register();}
   }
+
+  const register= () => {
+    console.log("register");
+    console.log(inputs); 
+  }
+  const [loading, setLoading] = React.useState(true);
   return (
       <Background>
+        <InputsLoader visible={loading}/>
         <Text style={styles.gameText}>GAME HUB</Text>
         <View style={styles.inputsContainer}>
         <Text style={styles.registerText}>Register</Text>
@@ -76,6 +82,7 @@ const [errors, setErrors] = React.useState({})
           error={errors.confirmPassword}/>
 
           <Button bgColor={orange} txtcolor={white} title="Register" onPress={validate}/>
+          
       </View>
      </Background>
     

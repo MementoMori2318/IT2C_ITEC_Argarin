@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
   gameText: {
     fontSize: 55, 
     color: "#fff", 
-    fontWeight: "600", 
+    fontWeight: "800", 
     
     
   },
