@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Text, View, StyleSheet, useWindowDimensions } from "react-native";
-import { PacmanIndicator, } from 'react-native-indicators';
+import { MaterialIndicator } from 'react-native-indicators';
   
 const InputsLoader = ({visible = false}) => {
     const { width, height } = useWindowDimensions();
@@ -8,8 +8,8 @@ const InputsLoader = ({visible = false}) => {
         visible && (
             <View style={[styles.loaderContainer, { width, height }]}>
             <View style={styles.loader}>
-                <PacmanIndicator color='#FFFF00' size={120}/>
-                <Text style={styles.load}>Loading ...</Text>
+                <MaterialIndicator color='#f72a1b' size={150} trackWidth={15}/>
+                
             </View>
             </View>
         )
@@ -25,8 +25,9 @@ const styles = StyleSheet.create({
     loaderContainer: {
         position: 'absolute',
         zIndex: 20,
-        backgroundColor: 'rgba(0,0,0,.5)',
-        justifyContent: 'center'
+        backgroundColor: 'rgba(0,0,0,.9)',
+        justifyContent: 'center',
+        
     },
     load: {
         color:'#FFFF00',
