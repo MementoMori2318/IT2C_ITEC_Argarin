@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, Text, StyleSheet} from 'react-native';
+import { View, Text, StyleSheet, } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { ALERT_TYPE, Dialog, AlertNotificationRoot, Toast } from 'react-native-alert-notification';
 import Inputs from '../../components/Inputs';
@@ -83,8 +83,10 @@ const validate =() =>{
   }
   const [loading, setLoading] = React.useState(false);
   return (
+    
       <Background>
         <AlertNotificationRoot>
+          
           <InputsLoader visible={loading}/>
           <Text style={styles.gameText}>GAME HUB</Text>
           <View style={styles.inputsContainer}>
@@ -111,6 +113,7 @@ const validate =() =>{
 
             <Button bgColor={orange} txtcolor={white} title="Register" onPress={validate}/>
           </View>
+          
       </AlertNotificationRoot>
      </Background>
     
