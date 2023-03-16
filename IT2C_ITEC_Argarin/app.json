@@ -2,6 +2,7 @@
   "expo": {
     "name": "IT2C_ITEC_Argarin",
     "slug": "IT2C_ITEC_Argarin",
+    "plugins": ["@react-native-google-signin/google-signin"],
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -22,6 +23,7 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
+      "googleServicesFile": "./google-services.json",
       "package": "com.mememto_mori.IT2C_ITEC_Argarin"
     },
     "web": {

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, Text, StyleSheet, } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { ALERT_TYPE, Dialog, AlertNotificationRoot, Toast } from 'react-native-alert-notification';
 import Inputs from '../../components/Inputs';
@@ -89,7 +89,7 @@ const validate =() =>{
           
           <InputsLoader visible={loading}/>
           <Text style={styles.gameText}>GAME HUB</Text>
-          <View style={styles.inputsContainer}>
+          <ScrollView style={styles.inputsContainer}>
           <Text style={styles.registerText}>Register</Text>
             <Inputs label={"Email"} iconName="email-outline" placeholder="Enter Email"
             onChangeText={(text) =>{handleOnChange(text, "email"); }}
@@ -112,7 +112,8 @@ const validate =() =>{
             error={errors.confirmPassword}/>
 
             <Button bgColor={orange} txtcolor={white} title="Register" onPress={validate}/>
-          </View>
+            
+          </ScrollView>
           
       </AlertNotificationRoot>
      </Background>

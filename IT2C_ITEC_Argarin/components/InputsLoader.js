@@ -1,12 +1,12 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, useWindowDimensions } from "react-native";
+import { Text, View, StyleSheet } from "react-native";
 import { MaterialIndicator } from 'react-native-indicators';
   
 const InputsLoader = ({visible = false}) => {
-    const { width, height } = useWindowDimensions();
+    
     return(
         visible && (
-            <View style={[styles.loaderContainer, { width, height }]}>
+            <View style={[styles.loaderContainer]}>
             <View style={styles.loader}>
                 <MaterialIndicator color='#f72a1b' size={150} trackWidth={15}/>
                 
@@ -27,6 +27,8 @@ const styles = StyleSheet.create({
         zIndex: 20,
         backgroundColor: 'rgba(0,0,0,.9)',
         justifyContent: 'center',
+        width: "100%",
+        height: "100%",
         
     },
     load: {

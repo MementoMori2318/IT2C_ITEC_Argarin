@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "231135650384",
+    "project_id": "it2c-itec-argarin",
+    "storage_bucket": "it2c-itec-argarin.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:231135650384:android:ac0292c01bfdfa7fbf2755",
+        "android_client_info": {
+          "package_name": "com.mememto_mori.IT2C_ITEC_Argarin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "231135650384-83c1tac8mfppsvf52oiec4ctlugh4pa3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mememto_mori.IT2C_ITEC_Argarin",
+            "certificate_hash": "54fba90658c749fa3c03bfa50ed666f8008caf15"
+          }
+        },
+        {
+          "client_id": "231135650384-r3bfvh75v8rf3j4etvl8r03vrn126evq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mememto_mori.IT2C_ITEC_Argarin",
+            "certificate_hash": "1fb509e62b12358d5679a7f18a70f4afb100bb48"
+          }
+        },
+        {
+          "client_id": "231135650384-lbu9ueh0tui7p3n4sned9ulognsb9oej.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5NZSQl3n-g3w0sBlUcmrbybJeOy-HcAg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "231135650384-lbu9ueh0tui7p3n4sned9ulognsb9oej.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
