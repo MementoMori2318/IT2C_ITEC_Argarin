@@ -7,7 +7,7 @@ import Inputs from '../../components/Inputs';
 import InputsLoader from '../../components/InputsLoader';
 import { ALERT_TYPE, Dialog, AlertNotificationRoot, Toast } from 'react-native-alert-notification';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import WellcomeScreen from './WellcomeScreen';
+import WelcomeScreen from './WelcomeScreen';
 
 
 const Login = ({ navigation }) => {
@@ -60,8 +60,8 @@ const Login = ({ navigation }) => {
           console.log(userData);
 
           if (inputs.email == userData.email && inputs.password == userData.password) {
-            navigation.navigate("WellcomeScreen");
-            AsyncStorage.setItem("userData", JSON.stringify({...userData, loggedIn: true}))
+            navigation.navigate("WelcomeScreen");
+            AsyncStorage.setItem("userData", JSON.stringify({...userData, loggedIn: true}));
           } else {
             console.log("No Account found")
             Dialog.show({
