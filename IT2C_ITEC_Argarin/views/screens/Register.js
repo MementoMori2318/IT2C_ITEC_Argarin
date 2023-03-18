@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, Text, StyleSheet, ScrollView, } from 'react-native';
+import { View, Text, StyleSheet, ScrollView,} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { ALERT_TYPE, Dialog, AlertNotificationRoot, Toast } from 'react-native-alert-notification';
 import Inputs from '../../components/Inputs';
@@ -9,6 +9,7 @@ import { orange, white } from '../../components/Color';
 import InputsLoader from '../../components/InputsLoader';
 
 const Register = ({ navigation }) => {
+  
   const [inputs, setInputs] = React.useState({
     email:"",
     username:"",
@@ -110,7 +111,7 @@ const validate =() =>{
             onChangeText={(text) =>{handleOnChange(text, "confirmPassword");}}
             onFocus={() => handleError(null, "confirmPassword")} 
             error={errors.confirmPassword}/>
-
+            
             <Button bgColor={orange} txtcolor={white} title="Register" onPress={validate}/>
             
           </ScrollView>

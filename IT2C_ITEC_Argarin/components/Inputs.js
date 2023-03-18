@@ -8,7 +8,7 @@ const Inputs = ({label, iconName, password, error, onFocus = () =>{}, ...props})
     return (
         <View style={styles.container}>
             <Text style={styles.label}>{label}</Text>
-            
+          
             <View style={[styles.inputContainer,{borderColor: isFocused ? "#1DE2D8"  : "#BABBC3"}, ]}>
           
             <Icon name={iconName} style={styles.icon}/>
