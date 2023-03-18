@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, View, StyleSheet} from 'react-native';
+import {Text, View, StyleSheet, Image} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Background from '../../components/Background';
 import Button from '../../components/Button';
@@ -47,7 +47,9 @@ const WelcomeScreen = ( { navigation } ) => {
   return (
     <Background>
     <View>
-     
+        {/* {userDetails?.photoURL && (
+          <Image style={styles.image} source={{uri:userDetails?.photoURL}} />
+        )} */}
         <Text style={styles.welcome}>Welcome {userDetails?.username}🎉</Text>
         <Text style={styles.welcome}>Welcome {userDetails?.displayName}🎉</Text>
      
@@ -64,7 +66,9 @@ const styles = StyleSheet.create({
     color: "#fff", 
     fontWeight: "900", 
     alignSelf: 'center',
-    paddingTop: 250,
   },
+  image: {
+
+  }
 });
 export default WelcomeScreen;

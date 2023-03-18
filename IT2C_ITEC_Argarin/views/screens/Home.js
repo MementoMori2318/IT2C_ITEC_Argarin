@@ -12,6 +12,9 @@ const Home = ({ navigation }) => {
   GoogleSignin.configure({
     webClientId: '231135650384-lbu9ueh0tui7p3n4sned9ulognsb9oej.apps.googleusercontent.com',
   });
+  // Set an initializing state whilst Firebase connects
+  const [initializing, setInitializing] = React.useState(true);
+  const [user, setUser] = React.useState();
   const onGoogleButtonPress = async() => {
     // Check if your device supports Google Play
     await GoogleSignin.hasPlayServices({ showPlayServicesUpdateDialog: true });
@@ -26,19 +29,17 @@ const Home = ({ navigation }) => {
     const user_sign_in = auth().signInWithCredential(googleCredential);
     user_sign_in.then((user) => {
       console.log(user);
+      setUser(user);
+      GoogleLogedIn();
     }).catch((error) => {
       console.log(error);
     })
   };
-   // Set an initializing state whilst Firebase connects
-   const [initializing, setInitializing] = React.useState(true);
-   const [user, setUser] = React.useState();
+   
  
    // Handle user state changes
    function onAuthStateChanged(user) {
      setUser(user);
-    
-   
      if (initializing) setInitializing(false);
    }
  
@@ -46,15 +47,19 @@ const Home = ({ navigation }) => {
      const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
      return subscriber; // unsubscribe on unmount
    }, []);
+   React.useEffect(() => {
+    if(user){
+      console.log(user);
+      GoogleLogedIn();
+     } else {
+      console.log("no user");
+     }
+  }, []);
   
-   if(user){
-    console.log(user);
-    navigation.navigate("WelcomeScreen");
-            AsyncStorage.setItem("UserLogedInData", JSON.stringify({user, loggedIn: true}));
-   } else {
-    console.log("no user");
-   }
-
+const GoogleLogedIn = () => {
+  navigation.navigate("WelcomeScreen");
+  AsyncStorage.setItem("UserLogedInData", JSON.stringify({user, loggedIn: true}));
+}
   return (
     <Background >
       <View style={styles.container}>
